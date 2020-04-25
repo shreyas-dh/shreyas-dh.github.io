@@ -1,1 +1,462 @@
-hi bhai
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            MageHub - Magento 2 Extensions Directory
+        </title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <!-- css -->
+        <link rel="stylesheet" href="fontawesome-all.min.css" />
+        <link rel="stylesheet" href="bootstrap.min.css" />
+        <link rel="stylesheet" href="styles.min.css?v=2" />
+    
+	<title>MageHub - Magento 2 Extensions Directory</title>
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    </head>
+    <body>
+
+    <main role="main">
+
+        <div class="py-3 controls-panel control-top-panel">
+            <div class="container">
+
+                <div class="row mb-2">
+                    <div class="col-lg-6">
+                        <div class="input-group">
+
+                            <!-- text filter by title -->
+                            <input
+                                    type="text"
+                                    data-jplist-control="textbox-filter"
+                                    data-group="group1"
+                                    data-name="model-text-filter"
+                                    data-path=".card-title"
+                                    data-clear-btn-id="model-clear-btn"
+                                    class="form-control"
+                                    placeholder="Filter by Name" />
+
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button" id="model-clear-btn">Clear</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="d-none d-sm-none col-lg-6 d-lg-flex align-items-center">
+                        <div
+                                data-jplist-control="slider-range-filter"
+                                data-path=".length .val"
+                                data-group="group1"
+                                data-name="length-range-slider"
+                                data-min="0"
+                                data-from="0"
+                                data-to="900"
+                                data-max="900">
+
+                            <span class="range-slider-value">
+                                Price <span data-type="value-1"></span>
+                            </span>
+
+                            <div class="jplist-slider" data-type="slider"></div>
+
+                            <span class="range-slider-value" data-type="value-2"></span>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-lg-6">
+                        <div class="input-group">
+
+                            <!-- text filter by description -->
+                            <input
+                                    type="text"
+                                    data-jplist-control="textbox-filter"
+                                    data-group="group1"
+                                    data-name="model-text-filter"
+                                    data-path=".description"
+                                    data-clear-btn-id="description-clear-btn"
+                                    class="form-control"
+                                    placeholder="Filter by Description" />
+
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button" id="description-clear-btn">Clear</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- text filter by tags -->
+                    <div class="d-none d-sm-none col-lg-6 d-lg-flex align-items-center">
+                        <input
+                                data-jplist-control="textbox-filter"
+                                data-group="group1"
+                                data-name="my-filter-1"
+                                data-path=".badge"
+                                type="text"
+                                value=""
+                                placeholder="Filter by Tags"
+                                data-clear-btn-id="tags-clear-btn"
+                                class="form-control"
+                        />
+
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="tags-clear-btn">Clear</button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+                    <div class="col flex flex-wrap align-items-start">
+
+                        <!-- pagination control -->
+                        <nav
+                                data-jplist-control="pagination"
+                                data-group="group1"
+                                data-items-per-page="3"
+                                data-current-page="0"
+                                data-disabled-class="disabled"
+                                data-selected-class="active"
+                                data-jump="top"
+                                data-name="pagination1"
+                                class="mb-2 mr-3">
+
+                            <!-- first and previous buttons -->
+                            <ul class="pagination d-inline-flex">
+                                <li class="page-item d-none d-sm-none d-lg-inline-block" data-type="first"><a class="page-link" href="#">«</a></li>
+                                <li class="page-item" data-type="prev"><a class="page-link" href="#">‹</a></li>
+                            </ul>
+
+                            <!-- pages buttons -->
+                            <ul class="pagination d-none d-sm-none d-lg-inline-flex" data-type="pages">
+                                <li class="page-item" data-type="page"><a class="page-link" href="#">{pageNumber}</a></li>
+                            </ul>
+
+                            <!-- next and last buttons -->
+                            <ul class="pagination d-inline-flex">
+                                <li class="page-item" data-type="next"><a class="page-link" href="#">›</a></li>
+                                <li class="page-item d-none d-sm-none d-lg-inline-block" data-type="last"><a class="page-link" href="#">»</a></li>
+                            </ul>
+
+                            <!-- information labels -->
+                            <span data-type="info" class="d-none d-sm-none d-lg-inline-flex badge badge-secondary ml-3 p-2">
+                                Page {pageNumber} of {pagesNumber}
+                            </span>
+
+                            <!-- items per page dropdown -->
+                            <div class="dropdown d-inline-flex ml-lg-3"
+                                 data-type="items-per-page-dd"
+                                 data-opened-class="show">
+
+                                <button
+                                        data-type="panel"
+                                        class="btn btn-primary dropdown-toggle"
+                                        type="button">
+                                    Dropdown button
+                                </button>
+
+                                <div
+                                        data-type="content"
+                                        class="dropdown-menu"
+                                        aria-labelledby="dropdownMenuButton">
+
+                                    <a class="dropdown-item" href="#" data-value="4">4 per page</a>
+                                    <a class="dropdown-item" href="#" data-value="8">8 per page</a>
+                                    <a class="dropdown-item" href="#" data-value="12">12 per page</a>
+                                    <a class="dropdown-item" href="#" data-value="0">View All</a>
+
+                                </div>
+                            </div>
+
+                        </nav>
+
+                        <!-- dropdown sort control -->
+                        <div class="dropdown mr-3"
+                             data-jplist-control="dropdown-sort"
+                             data-opened-class="show"
+                             data-group="group1"
+                             data-name="sort1">
+
+                            <button
+                                    data-type="panel"
+                                    class="btn btn-primary dropdown-toggle"
+                                    type="button">
+                                Sort by
+                            </button>
+
+                            <div
+                                    data-type="content"
+                                    class="dropdown-menu"
+                                    aria-labelledby="dropdownMenuButton">
+
+                                <a class="dropdown-item"
+                                   href="#"
+                                   data-path="default">Sort By</a>
+
+                                <a class="dropdown-item"
+                                   href="#"
+                                   data-path=".card-title"
+                                   data-order="asc"
+                                   data-type="text">Nmae A-Z</a>
+
+                                <a class="dropdown-item"
+                                   href="#"
+                                   data-path=".card-title"
+                                   data-order="desc"
+                                   data-type="text">Nmae Z-A</a>
+
+                                <a class="dropdown-item"
+                                   href="#"
+                                   data-path=".description"
+                                   data-order="asc"
+                                   data-type="text">Description A-Z</a>
+
+                                <a class="dropdown-item"
+                                   href="#"
+                                   data-path=".description"
+                                   data-order="desc"
+                                   data-type="text">Description Z-A</a>
+                            </div>
+                        </div>
+
+                        <!-- reset control -->
+                        <button
+                                data-jplist-control="reset"
+                                data-group="group1"
+                                data-name="reset"
+                                class="btn btn-secondary"
+                                type="button">
+                            Reset
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="py-5 bg-light">
+            <div class="container">
+
+                <div class="row" data-jplist-group="group1" id="parentBox">
+                    <!-- no results control -->
+                    <div class="col text-center" data-jplist-control="no-results" data-group="group1" data-name="no-results">No Results Found</div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="py-3 py-lg-5 controls-panel control-bottom-panel">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col flex">
+                        <!-- pagination control -->
+                        <nav
+                                data-jplist-control="pagination"
+                                data-group="group1"
+                                data-items-per-page="8"
+                                data-current-page="0"
+                                data-disabled-class="disabled"
+                                data-selected-class="active"
+                                data-jump="top"
+                                data-name="pagination1"
+                                class="mb-2 mb-lg-0">
+
+                            <!-- first and previous buttons -->
+                            <ul class="pagination d-inline-flex">
+                                <li class="page-item d-none d-sm-none d-lg-inline-block" data-type="first"><a class="page-link" href="#">«</a></li>
+                                <li class="page-item" data-type="prev"><a class="page-link" href="#">‹</a></li>
+                            </ul>
+
+                            <!-- pages buttons -->
+                            <ul class="pagination d-none d-sm-none d-lg-inline-flex" data-type="pages">
+                                <li class="page-item" data-type="page"><a class="page-link" href="#">{pageNumber}</a></li>
+                            </ul>
+
+                            <!-- next and last buttons -->
+                            <ul class="pagination d-inline-flex">
+                                <li class="page-item" data-type="next"><a class="page-link" href="#">›</a></li>
+                                <li class="page-item d-none d-sm-none d-lg-inline-block" data-type="last"><a class="page-link" href="#">»</a></li>
+                            </ul>
+
+                            <!-- information labels -->
+                            <span data-type="info" class="d-none d-sm-none d-lg-inline-flex badge badge-secondary ml-3 p-2">
+                                {startItem} - {endItem} of {itemsNumber}
+                            </span>
+
+                            <!-- items per page dropdown -->
+                            <div class="dropdown d-inline-flex ml-3"
+                                 data-type="items-per-page-dd"
+                                 data-opened-class="show">
+
+                                <button
+                                        data-type="panel"
+                                        class="btn btn-primary dropdown-toggle"
+                                        type="button">Items per page</button>
+
+                                <div
+                                        data-type="content"
+                                        class="dropdown-menu"
+                                        aria-labelledby="dropdownMenuButton">
+
+                                    <a class="dropdown-item" href="#" data-value="3">3 per page</a>
+                                    <a class="dropdown-item" href="#" data-value="6">6 per page</a>
+                                    <a class="dropdown-item" href="#" data-value="9">9 per page</a>
+                                    <a class="dropdown-item" href="#" data-value="0">View All</a>
+
+                                </div>
+                            </div>
+
+                        </nav>
+
+                        <!-- dropdown sort control -->
+                        <div class="dropdown ml-3"
+                             data-jplist-control="dropdown-sort"
+                             data-opened-class="show"
+                             data-group="group1"
+                             data-name="sort1">
+
+                            <button
+                                    data-type="panel"
+                                    class="btn btn-primary dropdown-toggle"
+                                    type="button">
+                                Sort by
+                            </button>
+
+                            <div
+                                    data-type="content"
+                                    class="dropdown-menu"
+                                    aria-labelledby="dropdownMenuButton">
+
+                                <a class="dropdown-item"
+                                   href="#"
+                                   data-path="default">Sort By</a>
+
+                                <a class="dropdown-item"
+                                   href="#"
+                                   data-path=".card-title"
+                                   data-order="asc"
+                                   data-type="text">Title A-Z</a>
+
+                                <a class="dropdown-item"
+                                   href="#"
+                                   data-path=".card-title"
+                                   data-order="desc"
+                                   data-type="text">Title Z-A</a>
+
+                                <a class="dropdown-item"
+                                   href="#"
+                                   data-path=".description"
+                                   data-order="asc"
+                                   data-type="text">Description A-Z</a>
+
+                                <a class="dropdown-item"
+                                   href="#"
+                                   data-path=".description"
+                                   data-order="desc"
+                                   data-type="text">Description Z-A</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- IE / Edge babel polyfill -->
+    <script src="polyfill.min.js"></script>
+
+    <!-- jPList Library -->
+    <script src="jplist.min.js"></script>
+    <script src="papaparse.min.js"></script>
+    <script>
+        Papa.parse("https://shreyas-dh.github.io/list.csv", {
+            download: true,
+            complete: function(results) {
+                loadResults(results);
+            }
+        });
+        function loadResults(csvData){
+
+            jplist.init();
+
+            var parentBox = document.getElementById('parentBox');
+
+            var indexx = 0;
+
+            var allDivs = [];
+            csvData.data.forEach((obj)=>{
+
+                if(indexx != 0 && obj[0] != null && obj[2] != null){
+
+                    var name = obj[0];
+                    var description = obj[1];
+                    var url = obj[2];
+                    var price = obj[3];
+                    var reviews = obj[4];
+                    var activeCategory = obj[5];
+                    var image = obj[6];
+
+                    const divv = document.createElement('div');
+                    divv.setAttribute('class', 'col-md-3 mb-4 divv');
+                    divv.setAttribute('data-jplist-item', '');
+
+                    if(price && price != 'null'){
+                        price = price.replace("$", "");
+                    }
+                    else{
+                        price = '0';
+                    }
+
+                    divv.innerHTML = '<div class="card box-shadow">'+
+                                        '<div class="car-img">'+
+                                            '<img class="card-img-top" alt="'+name+'" src="'+image+'"/>'+
+                                        '</div>'+
+                                        '<div class="card-header">'+
+                                            '<h5 class="card-title mb-0">'+
+                                                '<a href="'+url+'" title="'+name+'">'+name+'</a>'+
+                                            '</h5>'+
+                                        '</div>'+
+                                        '<ul class="list-group list-group-flush">'+
+                                            '<li class="list-group-item">'+
+                                                '<span class="description">'+description+'</span>'+
+                                            '</li>'+
+                                            '<li class="list-group-item">'+
+                                                '<b class="header length-header">Price</b>'+
+                                                '<span class="length">$ <span class="val">'+price+'</span></span>'+
+                                            '</li>'+
+                                        '</ul>'+
+                                        '<div class="card-body">'+
+                                            '<span class="badge badge-info">'+activeCategory+'</span>'+
+                                            // '<span class="badge badge-secondary">aerial view</span>'+
+                                            // '<span class="badge badge-info">mountain range</span>'+
+                                            // '<span class="badge badge-secondary">blue</span>'+
+                                            // '<span class="badge badge-info">snow</span>'+
+                                        '</div>'+
+                                    '</div>';
+                    allDivs.push(divv);
+                }
+                indexx++;
+            });
+
+            jplist.resetContent(function(){
+                allDivs.forEach((div)=>{
+                    parentBox.appendChild(div);
+                });
+            }); 
+        }
+
+    </script>
+    </body>
+</html>`
