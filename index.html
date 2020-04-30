@@ -27,20 +27,18 @@
                 <div class="row mb-2">
                     <div class="col-lg-6">
                         <div class="input-group">
-
-                            <!-- text filter by title -->
                             <input
                                     type="text"
                                     data-jplist-control="textbox-filter"
                                     data-group="group1"
-                                    data-name="model-text-filter"
+                                    data-name="name-filter"
                                     data-path=".card-title"
-                                    data-clear-btn-id="model-clear-btn"
+                                    data-clear-btn-id="name-clear-btn"
                                     class="form-control"
                                     placeholder="Filter by Name" />
 
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button" id="model-clear-btn">Clear</button>
+                                <button class="btn btn-outline-secondary" type="button" id="name-clear-btn">Clear</button>
                             </div>
 
                         </div>
@@ -49,9 +47,9 @@
                     <div class="d-none d-sm-none col-lg-6 d-lg-flex align-items-center">
                         <div
                                 data-jplist-control="slider-range-filter"
-                                data-path=".length .val"
+                                data-path=".price .val"
                                 data-group="group1"
-                                data-name="length-range-slider"
+                                data-name="price-range-slider"
                                 data-min="0"
                                 data-from="0"
                                 data-to="900"
@@ -73,13 +71,11 @@
                 <div class="row mb-2">
                     <div class="col-lg-6">
                         <div class="input-group">
-
-                            <!-- text filter by description -->
                             <input
                                     type="text"
                                     data-jplist-control="textbox-filter"
                                     data-group="group1"
-                                    data-name="model-text-filter"
+                                    data-name="description-filter"
                                     data-path=".description"
                                     data-clear-btn-id="description-clear-btn"
                                     class="form-control"
@@ -92,12 +88,12 @@
                         </div>
                     </div>
 
-                    <!-- text filter by tags -->
                     <div class="d-none d-sm-none col-lg-6 d-lg-flex align-items-center">
                         <input
+                                id="tags_filter"
                                 data-jplist-control="textbox-filter"
                                 data-group="group1"
-                                data-name="my-filter-1"
+                                data-name="tags-filter"
                                 data-path=".badge"
                                 type="text"
                                 value=""
@@ -116,8 +112,6 @@
 
                 <div class="row">
                     <div class="col flex flex-wrap align-items-start">
-
-                        <!-- pagination control -->
                         <nav
                                 data-jplist-control="pagination"
                                 data-group="group1"
@@ -149,6 +143,10 @@
                             <!-- information labels -->
                             <span data-type="info" class="d-none d-sm-none d-lg-inline-flex badge badge-secondary ml-3 p-2">
                                 Page {pageNumber} of {pagesNumber}
+                            </span>
+
+                            <span data-type="info" class="d-none d-sm-none d-lg-inline-flex badge badge-secondary ml-3 p-2">
+                                {itemsNumber} records
                             </span>
 
                             <!-- items per page dropdown -->
@@ -205,13 +203,13 @@
                                    href="#"
                                    data-path=".card-title"
                                    data-order="asc"
-                                   data-type="text">Nmae A-Z</a>
+                                   data-type="text">Name A-Z</a>
 
                                 <a class="dropdown-item"
                                    href="#"
                                    data-path=".card-title"
                                    data-order="desc"
-                                   data-type="text">Nmae Z-A</a>
+                                   data-type="text">Name Z-A</a>
 
                                 <a class="dropdown-item"
                                    href="#"
@@ -236,6 +234,92 @@
                                 type="button">
                             Reset
                         </button>
+                    </div>
+                </div>
+
+
+                <div class="row mb-2 mr-3">
+                    <div class="col flex flex-wrap align-items-start">
+                        <!-- select filter control -->
+                        <div class="box8">
+                            <select id="category_filter" data-jplist-control="select-filter" data-group="group1" class="mr-3" data-name="category-filter">
+                                <option value="0" data-path="default" data-name="category-filter" data-group="group1">Filter Categories</option>
+
+                                <optgroup label="Content & Customizations">
+                                    <option value="1" data-path=".translations" data-name="category-filter" data-group="group1">Translations & Localization</option>
+                                    <option value="2" data-path=".mobile" data-name="category-filter" data-group="group1">Mobile</option>
+                                    <option value="3" data-path=".personalization" data-name="category-filter" data-group="group1">Personalization & Experience Management</option>
+                                    <option value="4" data-path=".productcontent" data-name="category-filter" data-group="group1">Product Content</option>
+                                    <option value="5" data-path=".richmedia" data-name="category-filter" data-group="group1">Rich Media</option>
+                                    <option value="6" data-path=".sitesearch" data-name="category-filter" data-group="group1">Site Search & Navigation</option>
+                                    <option value="39" data-path=".blog" data-name="category-filter" data-group="group1">Blog</option>
+                                </optgroup>
+                                <optgroup label="Social">
+                                    <option value="40" data-path=".social" data-name="category-filter" data-group="group1">Social</option>
+                                </optgroup>
+                                <optgroup label="MultiVendor/Marketplace">
+                                    <option value="7" data-path=".marketplaceaddon" data-name="category-filter" data-group="group1">Marketplace Add-Ons</option>
+                                    <option value="8" data-path=".marketplacesolutions" data-name="category-filter" data-group="group1">Marketplace Solutions</option>
+                                </optgroup>
+                                <optgroup label="Shipping & Fulfillment">
+                                    <option value="9" data-path=".addressverification" data-name="category-filter" data-group="group1">Address Verification</option>
+                                    <option value="10" data-path=".crossborderfulfil" data-name="category-filter" data-group="group1">Cross Border Fulfillment</option>
+                                    <option value="11" data-path=".ordermgmt" data-name="category-filter" data-group="group1">Order Management (OMS)</option>
+                                    <option value="12" data-path=".warehousemgmt" data-name="category-filter" data-group="group1">Warehouse Management System (WMS)</option>
+                                    <option value="38" data-path=".shippingcustom" data-name="category-filter" data-group="group1">Shipping Customizations</option>
+                                </optgroup>
+                                <optgroup label="Customer Support">
+                                    <option value="13" data-path=".helpdesk" data-name="category-filter" data-group="group1">Helpdesk</option>
+                                    <option value="14" data-path=".livechat" data-name="category-filter" data-group="group1">Livechat</option>
+                                </optgroup>
+                                <optgroup label="Accounting & Finance">
+                                    <option value="15" data-path=".erp" data-name="category-filter" data-group="group1">ERP & Accounting</option>
+                                    <option value="16" data-path=".taxes" data-name="category-filter" data-group="group1">Taxes</option>
+                                </optgroup>
+                                <optgroup label="Payments & Security">
+                                    <option value="17" data-path=".checkout" data-name="category-filter" data-group="group1">Checkout Enhancements</option>
+                                    <option value="18" data-path=".fraud" data-name="category-filter" data-group="group1">Fraud Prevention</option>
+                                    <option value="19" data-path=".payment" data-name="category-filter" data-group="group1">Payment Integration</option>
+                                </optgroup>
+                                <optgroup label="Site Optimization">
+                                    <option value="20" data-path=".testing" data-name="category-filter" data-group="group1">Testing & Segmentation</option>
+                                    <option value="21" data-path=".hosting" data-name="category-filter" data-group="group1">Hosting</option>
+                                    <option value="22" data-path=".sitemonitoring" data-name="category-filter" data-group="group1">Site Monitoring</option>
+                                    <option value="23" data-path=".performance" data-name="category-filter" data-group="group1">Performance</option>
+                                    <option value="24" data-path=".sitemap" data-name="category-filter" data-group="group1">Sitemap</option>
+                                </optgroup>
+                                <optgroup label="Administration">
+                                    <option value="25" data-path=".reporting" data-name="category-filter" data-group="group1">Reporting & Analytics</option>
+                                    <option value="26" data-path=".admintools" data-name="category-filter" data-group="group1">Admin Tools</option>
+                                </optgroup>
+                                <optgroup label="Marketing">
+                                    <option value="27" data-path=".emailmarketing" data-name="category-filter" data-group="group1">Email Marketing</option>
+                                    <option value="28" data-path=".crm" data-name="category-filter" data-group="group1">CRM</option>
+                                    <option value="29" data-path=".seo" data-name="category-filter" data-group="group1">SEO/SEM</option>
+                                    <option value="30" data-path=".marketingautomation" data-name="category-filter" data-group="group1">Marketing Automation</option>
+                                    <option value="31" data-path=".advertising" data-name="category-filter" data-group="group1">Advertising</option>
+                                </optgroup>
+                                <optgroup label="Sales & Motivation">
+                                    <option value="32" data-path=".comarisonshoppingengines" data-name="category-filter" data-group="group1">Comparison Shopping Engines</option>
+                                    <option value="33" data-path=".gifts" data-name="category-filter" data-group="group1">Gifts</option>
+                                    <option value="34" data-path=".marketplacefeeds" data-name="category-filter" data-group="group1">Marketplace Feeds</option>
+                                    <option value="35" data-path=".pos" data-name="category-filter" data-group="group1">Point of Service (POS)</option>
+                                    <option value="36" data-path=".pricingpromotions" data-name="category-filter" data-group="group1">Pricing & Promotions</option>
+                                    <option value="37" data-path=".loyaltyrewards" data-name="category-filter" data-group="group1">Rewards & Loyalty</option>
+                                </optgroup>
+                            </select>
+                    </div>
+
+                        <!-- reset control -->
+                        <button
+                                data-jplist-control="reset"
+                                data-group="group1"
+                                class="btn btn-secondary"
+                                data-name="reset"
+                                type="button">
+                            Reset
+                        </button>
+
                     </div>
                 </div>
 
@@ -373,39 +457,165 @@
         </div>
 
     </main>
-
     <!-- IE / Edge babel polyfill -->
     <script src="polyfill.min.js"></script>
-
-    <!-- jPList Library -->
     <script src="jplist.min.js"></script>
     <script src="papaparse.min.js"></script>
     <script>
-        Papa.parse("https://shreyas-dh.github.io/list.csv", {
+
+        function autocomplete(inp, arr) {
+            //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_autocomplete
+            var currentFocus;
+            inp.addEventListener("input", function(e) {
+                var a, b, i, val = this.value;
+                closeAllLists();
+                if (!val) { return false;}
+                currentFocus = -1;
+                a = document.createElement("DIV");
+                a.setAttribute("id", this.id + "autocomplete-list");
+                a.setAttribute("class", "autocomplete-items");
+                this.parentNode.appendChild(a);
+                for (i = 0; i < arr.length; i++) {
+                    if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                      b = document.createElement("DIV");
+                      b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                      b.innerHTML += arr[i].substr(val.length);
+                      b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                      b.addEventListener("click", function(e) {
+                          inp.value = this.getElementsByTagName("input")[0].value;
+                          closeAllLists();
+                      });
+                      a.appendChild(b);
+                    }
+                }
+            });
+            inp.addEventListener("keydown", function(e) {
+              var x = document.getElementById(this.id + "autocomplete-list");
+              if (x) x = x.getElementsByTagName("div");
+              if (e.keyCode == 40) {
+                currentFocus++;
+                addActive(x);
+              } else if (e.keyCode == 38) { //up
+                currentFocus--;
+                addActive(x);
+              } else if (e.keyCode == 13) {
+                e.preventDefault();
+                if (currentFocus > -1) {
+                  if (x) x[currentFocus].click();
+                }
+              }
+            });
+            
+            function addActive(x) {
+                if (!x) return false;
+                removeActive(x);
+                if (currentFocus >= x.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = (x.length - 1);
+                x[currentFocus].classList.add("autocomplete-active");
+            }
+
+            function removeActive(x) {
+                for (var i = 0; i < x.length; i++) {
+                    x[i].classList.remove("autocomplete-active");
+                }
+            }
+            function closeAllLists(elmnt) {
+                var x = document.getElementsByClassName("autocomplete-items");
+                for (var i = 0; i < x.length; i++) {
+                    if (elmnt != x[i] && elmnt != inp) {
+                        x[i].parentNode.removeChild(x[i]);
+                    }
+                }
+            }
+            document.addEventListener("click", function (e) {
+                closeAllLists(e.target);
+            });
+        }
+
+        /*An array containing all the country names in the world:*/
+        var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
+
+        autocomplete(document.getElementById("tags_filter"), countries);
+
+        var categories = {
+                          "translations": "Translations & Localization",
+                          "mobile": "Mobile",
+                          "personalization": "Personalization & Experience Management",
+                          "productcontent": "Product Content",
+                          "richmedia": "Rich Media",
+                          "sitesearch": "Site Search & Navigation",
+                          "blog": "Blog",
+                          "social": "Social",
+                          "marketplaceaddon": "Marketplace Add-Ons",
+                          "marketplacesolutions": "Marketplace Solutions",
+                          "addressverification": "Address Verification",
+                          "crossborderfulfil": "Cross Border Fulfillment",
+                          "ordermgmt": "Order Management (OMS)",
+                          "warehousemgmt": "Warehouse Management System (WMS)",
+                          "shippingcustom": "Shipping Customizations",
+                          "helpdesk": "Helpdesk",
+                          "livechat": "Livechat",
+                          "erp": "ERP & Accounting",
+                          "taxes": "Taxes",
+                          "checkout": "Checkout Enhancements",
+                          "fraud": "Fraud Prevention",
+                          "payment": "Payment Integration",
+                          "testing": "Testing & Segmentation",
+                          "hosting": "Hosting",
+                          "sitemonitoring": "Site Monitoring",
+                          "performance": "Performance",
+                          "sitemap": "Sitemap",
+                          "reporting": "Reporting & Analytics",
+                          "admintools": "Admin Tools",
+                          "emailmarketing": "Email Marketing",
+                          "crm": "CRM",
+                          "seo": "SEO/SEM",
+                          "marketingautomation": "Marketing Automation",
+                          "advertising": "Advertising",
+                          "comarisonshoppingengines": "Comparison Shopping Engines",
+                          "gifts": "Gifts",
+                          "marketplacefeeds": "Marketplace Feeds",
+                          "pos": "Point of Service (POS)",
+                          "pricingpromotions": "Pricing & Promotions",
+                          "loyaltyrewards": "Rewards & Loyalty"
+                        };
+        // var select = document.getElementById("category_filter");
+        var l=0;
+        // for(index in categories) {
+        //     l = select.options.length;
+        //     select.options[l] = new Option(categories[index], l);
+        //     select.options[l].setAttribute("data-path", "."+index);
+        // }
+        Papa.parse("https://shreyas-dh.github.io/ext.csv", {
             download: true,
             complete: function(results) {
                 loadResults(results);
             }
         });
+
+        function getCategory(object, value) {//returns key by value
+            return Object.keys(object).find(key => object[key] === value);
+        }
+
         function loadResults(csvData){
 
             jplist.init();
 
             var parentBox = document.getElementById('parentBox');
 
-            var indexx = 0;
+            var index = 0;
 
             var allDivs = [];
             csvData.data.forEach((obj)=>{
 
-                if(indexx != 0 && obj[0] != null && obj[2] != null){
+                if(index != 0 && obj[0] != null && obj[2] != null){
 
-                    var name = obj[0];
-                    var description = obj[1];
-                    var url = obj[2];
+                    var name = obj[1];
+                    var description = obj[2];
                     var price = obj[3];
-                    var reviews = obj[4];
-                    var activeCategory = obj[5];
+                    var url = obj[4];
+                    var reviews = obj[5];
+                    var activeCategory = obj[9];
                     var image = obj[6];
 
                     const divv = document.createElement('div');
@@ -418,6 +628,7 @@
                     else{
                         price = '0';
                     }
+                    var CategoryKey = getCategory(categories,activeCategory);
 
                     divv.innerHTML = '<div class="card box-shadow">'+
                                         '<div class="car-img">'+
@@ -433,12 +644,11 @@
                                                 '<span class="description">'+description+'</span>'+
                                             '</li>'+
                                             '<li class="list-group-item">'+
-                                                '<b class="header length-header">Price</b>'+
-                                                '<span class="length">$ <span class="val">'+price+'</span></span>'+
+                                                '<span class="price"> $<span class="val">'+price+'</span></span>'+
                                             '</li>'+
                                         '</ul>'+
                                         '<div class="card-body">'+
-                                            '<span class="badge badge-info">'+activeCategory+'</span>'+
+                                            '<span class="badge badge-info '+CategoryKey+'">'+activeCategory+'</span>'+
                                             // '<span class="badge badge-secondary">aerial view</span>'+
                                             // '<span class="badge badge-info">mountain range</span>'+
                                             // '<span class="badge badge-secondary">blue</span>'+
@@ -447,7 +657,7 @@
                                     '</div>';
                     allDivs.push(divv);
                 }
-                indexx++;
+                index++;
             });
 
             jplist.resetContent(function(){
