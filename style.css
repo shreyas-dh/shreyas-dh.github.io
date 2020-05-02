@@ -198,7 +198,7 @@
   /*background-color: #007bff;*/
   color: black;
   padding: 7px;
-  width: 100%;
+  width: 86%;
   border: none;
   font-size: 17px;
   box8-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
@@ -217,4 +217,21 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+.list-group-item .price {
+    font-size: 19px;
+    float: left;
+}
+.companyLogo{
+  float: right;
+  margin: 2px auto;
+}
+.companyLogo img.Logo-BSSCommerce{
+  height: 26px;
+}
+.companyLogo img.Logo-CEDCommerce{
+  height: 23px;
+}
+.companyLogo img{
+  height: 13px;
 }
