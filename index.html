@@ -7,10 +7,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-        <!-- css -->
-        <link rel="stylesheet" href="fontawesome-all.min.css" />
         <link rel="stylesheet" href="bootstrap.min.css" />
-        <link rel="stylesheet" href="styles.min.css?v=2" />
     
 	<title>MageHub - Magento 2 Extensions Directory</title>
 
@@ -44,7 +41,7 @@
                         </div>
                     </div>
 
-                    <div class="d-none d-sm-none col-lg-6 d-lg-flex align-items-center">
+                    <div class="col-lg-6 d-lg-flex align-items-center">
                         <div
                                 data-jplist-control="slider-range-filter"
                                 data-path=".price .val"
@@ -148,7 +145,7 @@
                         </div>
                     </div>
 
-                    <div class="d-none d-sm-none col-lg-6 d-lg-flex align-items-center">
+                    <div class="col-lg-6 d-lg-flex align-items-center">
                         <input
                                 id="tags_filter"
                                 data-jplist-control="textbox-filter"
@@ -282,6 +279,18 @@
                                    data-path=".description"
                                    data-order="desc"
                                    data-type="text">Description Z-A</a>
+
+                                <a class="dropdown-item"
+                                   href="#"
+                                   data-path=".price .val"
+                                   data-order="asc"
+                                   data-type="text">Price low to high</a>
+
+                                <a class="dropdown-item"
+                                   href="#"
+                                   data-path=".price .val"
+                                   data-order="desc"
+                                   data-type="text">Price high to low</a>
                             </div>
                         </div>
 
