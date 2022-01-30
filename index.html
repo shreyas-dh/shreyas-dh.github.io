@@ -7,6 +7,8 @@
         <meta name="description" content="MageDirectory is simply Magento 2 Extensions Directory, which you can filter by price, category & tags. As the Magento User Base increases, soon there will be demand for the various extensions. MageDirectory is the one stop solution for these needs." />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<!--         <link rel="icon" type="image/png" sizes="32x32" href="logo.png"> -->
+
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165359331-1"></script>
         <script>
@@ -49,28 +51,30 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-6 d-lg-flex align-items-center">
-                            <div
-                                    data-jplist-control="slider-range-filter"
-                                    data-path=".price .val"
-                                    data-group="group1"
-                                    data-name="price-range-slider"
-                                    data-min="0"
-                                    data-from="0"
-                                    data-to="900"
-                                    data-max="900">
-
-                                <span class="range-slider-value">
-                                    Price <span data-type="value-1"></span>
-                                </span>
-
-                                <div class="jplist-slider" data-type="slider"></div>
-
-                                <span class="range-slider-value" data-type="value-2"></span>
-
-                            </div>
-                        </div>
-
+                        <div class="col-lg-6">
+                            <div class="box8">
+                               <select id="vendor_filter" data-jplist-control="select-filter" data-group="group1" data-name="vendor-filter">
+                                   <option value="0" data-path="default" data-name="vendor-filter" data-group="group1">Filter By Vendor</option>
+                                       <option value="1" data-path=".Amasty" data-name="vendor-filter" data-group="group1">Amasty</option>
+                                       <option value="2" data-path=".Mageplaza" data-name="vendor-filter" data-group="group1">Mageplaza</option>
+                                       <option value="3" data-path=".Landofcoder" data-name="vendor-filter" data-group="group1">Landofcoder</option>
+                                       <option value="4" data-path=".Mageworx" data-name="vendor-filter" data-group="group1">Mageworx</option>
+                                       <option value="5" data-path=".Magepow" data-name="vendor-filter" data-group="group1">Magepow</option>
+                                       <option value="6" data-path=".BSSCommerce" data-name="vendor-filter" data-group="group1">BSSCommerce</option>
+                                       <option value="7" data-path=".CEDCommerce" data-name="vendor-filter" data-group="group1">CEDCommerce</option>
+                                       <option value="8" data-path=".Magecomp" data-name="vendor-filter" data-group="group1">Magecomp</option>
+                                       <option value="9" data-path=".Webkul" data-name="vendor-filter" data-group="group1">Webkul</option>
+                               </select>
+                               <button
+                                       data-jplist-control="reset"
+                                       data-group="group1"
+                                       class="btn btn-outline-secondary"
+                                       data-name="reset"
+                                       type="button">
+                                   Reset
+                               </button>
+                           </div>
+                       </div>
                     </div>
 
                     <div class="row mb-2">
@@ -173,6 +177,30 @@
                         </div>
 
 
+                    </div>
+                    <div class="row">
+                        <div class="col flex flex-wrap align-items-start">
+                            <label class="checkbox_label">
+                                <input
+                                        type="checkbox"
+                                        data-jplist-control="checkbox-path-filter"
+                                        data-path=".marketplace"
+                                        data-group="group1"
+                                        data-name="name94">
+                                Marketplace Only
+                                </input>
+                            </label>
+                            <label class="checkbox_label">
+                                <input
+                                        type="checkbox"
+                                        data-jplist-control="checkbox-path-filter"
+                                        data-path=".thirdparty"
+                                        data-group="group1"
+                                        data-name="name95">
+                                Exclude Third-Party Integrators
+                                </input>
+                            </label>
+                        </div>
                     </div>
 
                     <div class="row">
@@ -278,17 +306,17 @@
 
                                     <a class="dropdown-item"
                                        href="#"
-                                       data-path=".description"
+                                       data-path=".vendorname"
                                        data-order="asc"
-                                       data-type="text">Description A-Z</a>
+                                       data-type="text">Vendor A-Z</a>
 
                                     <a class="dropdown-item"
                                        href="#"
-                                       data-path=".description"
+                                       data-path=".vendorname"
                                        data-order="desc"
-                                       data-type="text">Description Z-A</a>
+                                       data-type="text">Vendor Z-A</a>
 
-                                    <a class="dropdown-item"
+                                    <!-- <a class="dropdown-item"
                                        href="#"
                                        data-path=".price .val"
                                        data-order="asc"
@@ -298,7 +326,7 @@
                                        href="#"
                                        data-path=".price .val"
                                        data-order="desc"
-                                       data-type="text">Price high to low</a>
+                                       data-type="text">Price high to low</a> -->
                                 </div>
                             </div>
 
@@ -309,8 +337,9 @@
                                     data-name="reset"
                                     class="btn btn-secondary"
                                     type="button">
-                                Reset
+                                Reset All
                             </button>
+
                         </div>
                     </div>
 
@@ -454,7 +483,8 @@
     <script src="papaparse.min.js"></script>
     <script src="lazysizes.min.js"></script>
     <script>
-
+// https://www.jqueryscript.net/demo/jQuery-Plugin-For-Multi-Select-List-with-Checkboxes-MultiSelect/
+// https://www.jqueryscript.net/form/jQuery-Plugin-For-Multi-Select-List-with-Checkboxes-MultiSelect.html
         function autocomplete(inp, arr) {
             //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_autocomplete
             var currentFocus;
@@ -571,14 +601,15 @@
                           "pricingpromotions": "Pricing & Promotions",
                           "loyaltyrewards": "Rewards & Loyalty"
                         };
-        // var select = document.getElementById("category_filter");
-        var l=0;
+
+        var vendorImages = ["Magepow","CEDCommerce","Landofcoder","Mageworx","Amasty","Magecomp","BSSCommerce","Mageplaza","Webkul"];
+        // var select = document.getElementById("category_filter");",        var l=0;
         // for(index in categories) {
         //     l = select.options.length;
         //     select.options[l] = new Option(categories[index], l);
         //     select.options[l].setAttribute("data-path", "."+index);
         // }
-        Papa.parse("https://shreyas-dh.github.io/ext_28Jan0226.csv", {
+        Papa.parse("https://shreyas-dh.github.io/ext_all.csv", {
             download: true,
             complete: function(results) {
                 loadResults(results);
@@ -599,6 +630,7 @@
             var CategoryKey = undefined;
 
             var allDivs = [];
+            var vendorlist = [];
             csvData.data.forEach((obj)=>{
 
                 if(index != 0 && obj[0] != null && obj[2] != null){
@@ -609,22 +641,28 @@
                     var url = obj[4];
                     var reviews = obj[5];
                     var image = obj[6];
-                    var company = obj[7];
+                    var vendor = obj[7];
                     var tags = obj[8];
                     var activeCategory = obj[9];
+                    var Isthirdpary = obj[14];
                     const divv = document.createElement('div');
                     divv.setAttribute('class', 'col-md-3 mb-4 divv');
                     divv.setAttribute('data-jplist-item', '');
+                    console.log(name);
+                    console.log(Isthirdpary);
+                    var tags_html = '';
+                    var tags_array = tags.split(',');
+                    for(var i = 0; i < tags_array.length; i++) 
+                    {
+                        tags_html += '<span class="badge '+(i%2 === 0 ? 'badge-info' : 'badge-secondary')+'">'+tags_array[i]+'</span>';
+                    }
 
-                    if(price && price != 'null'){
-                        price = price.replace("$", "");
-                    }
-                    else{
-                        price = '0';
-                    }
                     if(activeCategory in categories){
                         CategoryKey = activeCategory;
                     }
+                    var vendorimage = vendorImages.includes(vendor) ? '<img class="Logo-'+vendor+'" src="logo/'+vendor+'.png">' : '<b>'+vendor+'</b>';
+                    var martkeplaceExt = url.includes('marketplace.magento') ? '<div class="marketplace"></div>' : '';
+                    var thirdpartyExt = Isthirdpary == 0 ? '<div class="thirdparty"></div>' : '';
                     // var CategoryKey = getCategory(categories,activeCategory);
                     // console.log(activeCategory+' => '+ CategoryKey);
 
@@ -642,18 +680,17 @@
                                                 '<span class="description">'+description+'</span>'+
                                             '</li>'+
                                             '<li class="list-group-item">'+
-                                                '<div class="companyLogo">'+
-                                                    '<img class="Logo-'+company+'" src="logo/'+company+'.png">'+
+                                                '<div class="companyLogo '+vendor+'">'+vendorimage+
                                                 '</div>'+
-                                                '<span class="price"> $<span class="val">'+price+'</span></span>'+
                                             '</li>'+
                                         '</ul>'+
                                         '<div style="display:none;">'+
-                                            '<div class="'+CategoryKey+'">'+activeCategory+
-                                            '</div>'+
+                                            '<div class="'+CategoryKey+'">'+activeCategory+'</div>'+
+                                            '<div class="vendorname">'+vendor+'</div>'+martkeplaceExt+thirdpartyExt+
                                         '</div>'+
                                         '<div class="card-body">'+
-                                            '<span class="badge badge-info">tagExample</span>'+
+                                            tags_html+
+                                            // '<span class="badge badge-info">tagExample</span>'+
                                             // '<span class="badge badge-secondary">aerial view</span>'+
                                             // '<span class="badge badge-info">mountain range</span>'+
                                             // '<span class="badge badge-secondary">blue</span>'+
@@ -661,6 +698,7 @@
                                         // '</div>'+
                                     '</div>';
                     allDivs.push(divv);
+                    vendorlist.push(vendor);
                 }
                 index++;
             });
@@ -669,9 +707,12 @@
                 allDivs.forEach((div)=>{
                     parentBox.appendChild(div);
                 });
-            }); 
+            });
+//             console.log(vendorlist.filter(function(value, index, self) {
+//   return self.indexOf(value) === index;
+// }));
         }
 
     </script>
     </body>
-</html>`
+</html>
